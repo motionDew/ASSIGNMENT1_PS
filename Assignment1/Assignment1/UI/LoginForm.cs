@@ -14,29 +14,28 @@ namespace Assignment1.UI
 {
     public partial class LoginForm : Form
     {
-        UserService userService = new UserService();
+        UserService userService;
 
         public LoginForm()
         {
             InitializeComponent();
+            userService = new UserService();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             String username = textBox1.Text;
-            String pass = textBox2.Text;
+            String password = textBox2.Text;
 
-            
-            //Retrieve user
-            //User user = ...;
+            String role = userService.login(username, password);
 
-            /*if (u == null)
+            if (role.Equals("not found"))
             {
                 MessageBox.Show("Not Registered");
             }
             else
             {
-                if (u.Role.Equals("admin"))
+                if (role.Equals("admin"))
                 {
                     //admin form
                     AdminForm adminForm = new AdminForm();
@@ -44,13 +43,15 @@ namespace Assignment1.UI
 
 
                 }
-                if (u.Role.Equals("agent"))
+                if (role.Equals("user"))
                 {
                     //user form
                     AgentForm agentForm = new AgentForm();
                     agentForm.Show();
                 }
-            }*/
+            }
         }
+
+     
     }
 }

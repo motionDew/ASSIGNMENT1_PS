@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B85D246E-D482-4079-924F-A06A98A7A8A9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assignment1</RootNamespace>
     <AssemblyName>Assignment1</AssemblyName>
@@ -48,9 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\AppointmentService.cs" />
+    <Compile Include="BL\IAppointmentService.cs" />
     <Compile Include="BL\ReportService.cs" />
     <Compile Include="BL\UserService.cs" />
-    <Compile Include="Tester.cs" />
+    <Compile Include="Run.cs" />
     <Compile Include="DAL\AppointmentDAO.cs" />
     <Compile Include="DAL\IAppointmentDAO.cs" />
     <Compile Include="DAL\IUserDAO.cs" />

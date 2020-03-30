@@ -9,10 +9,13 @@ namespace Assignment1.DAL
 {
     interface IAppointmentDAO
     {
-        List<Appointment> getAppointment(String clientName);
+        List<Appointment> getAppointments(String clientName);
+        Appointment getAppointment(String id);
         List<Appointment> getAllAppointments(String date);
         List<Appointment> getAllAppointmentsFromDateToDate(String startingDate,String endingDate);
         void addAppointment(Appointment appointment);
-        void setAppointmentStatusDone(String clientName);
+        void setAppointmentStatusDone(String id);
+        Appointment getLastAddedAppointment();
+        int exists(String date, String hour);
     }
 }
